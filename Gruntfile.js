@@ -47,7 +47,7 @@ module.exports = function(grunt) {
                 packages: {
                     bootstrap: '~2.2.1',
                     jquery: '',
-                    ember: '~1.0.0-pre.2'
+                    ember: ''
                 }
             }
         },
@@ -77,14 +77,29 @@ module.exports = function(grunt) {
 
         concat: {
             dist: {
-            src: [ 'client/lib/application.js' ],
-            dest: 'public/application.js'
+                src: [
+                    'client/lib/application.js',
+                    'client/lib/router.js',
+                    'client/lib/models/*.js',
+                    'client/lib/controllers/*.js',
+                ],
+                dest: 'public/application.js'
+            },
         },
-    }
+
+        watch: {
+            scripts: {
+                files: [ 'client/**' ],
+                tasks: [ 'default' ]
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-bowerful');
     grunt.loadNpmTasks('grunt-ember-templates');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+    grunt.registerTask('default', [ 'bowerful', 'ember_templates', 'copy', 'concat' ]);
 };
