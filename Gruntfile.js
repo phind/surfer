@@ -69,8 +69,8 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                  { src: [ 'client/static/**'], dest:
-                    'public/', flatten: true, expand: true, filter: 'isFile' }, // includes files in path
+                  { src: [ '**' ], dest:
+                    'public/', cwd: 'client/static/', expand: true, filter: 'isFile' }, // includes files in path
                 ]
             }
         },
