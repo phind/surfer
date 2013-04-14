@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                 },
 
                 files: {
-                  'public/templates.js': [ 'client/lib/templates/**.handlebars' ]
+                  'public/application.js': [ 'client/lib/templates/**.handlebars' ]
                 }
             }
         },
@@ -78,6 +78,7 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
+                    'public/application.js',
                     'client/lib/application.js',
                     'client/lib/router.js',
                     'client/lib/models/*.js',
