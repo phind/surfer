@@ -1,0 +1,23 @@
+{
+  "name": "surfer",
+  "version": "0.0.1",
+  "description": "Front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/phind/surfer.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.7",
+    "grunt-bowerful": "~0.2.2",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-ember-templates": "~0.4.4",
+    "grunt-contrib-concat": "~0.2.0"
+  }
+}
