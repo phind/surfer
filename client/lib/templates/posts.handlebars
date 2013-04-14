@@ -1,3 +1,11 @@
-{{#each post in model}}
-    {{#linkTo post post}}{{post.title}}{{/linkTo}}
-{{/each}}
+<div class="row-fluid">
+    <div class="span8">
+        <img src="./img/logo.jpg"><br>
+        {{#each post in model}}
+            {{#linkTo post post}}{{post.title}}{{/linkTo}}
+        {{/each}}
+    </div>
+    <div class="span2">
+        tags
+    </div>
+</div>
