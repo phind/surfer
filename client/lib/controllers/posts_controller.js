@@ -3,9 +3,18 @@
         page: 0,
         pageSize: 10,
 
+        pageCount: function () {
+
+            return Math.ceil(this.get('content.length') /
+                this.get('pageSize'));
+
+        }.property('content.length', 'pageSize'),
+
         view: function () {
-            return this.get('content').slice(this.get('page') *
-                   this.get('pageSize'), this.get('pageSize'));
+            var pageSize = this.get('pageSize');
+            var start = this.get('page') * pageSize;
+            var end = start + pageSize;
+            return this.get('content').slice(start, end);
 
         }.property('[]', 'page', 'pageSize')
     });
