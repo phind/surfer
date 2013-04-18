@@ -47,7 +47,10 @@ module.exports = function(grunt) {
                 packages: {
                     bootstrap: '~2.2.1',
                     jquery: '',
-                    ember: ''
+                    ember: '',
+                    markdown: {
+                        exclude: [ './lib/index.js' ]
+                    }
                 }
             }
         },
@@ -80,6 +83,7 @@ module.exports = function(grunt) {
                 src: [
                     'public/application.js',
                     'client/lib/application.js',
+                    'client/lib/helpers/*.js',
                     'client/lib/router.js',
                     'client/lib/models/*.js',
                     'client/lib/controllers/*.js',

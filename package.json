@@ -15,7 +15,7 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-cli": "~0.1.7",
-    "grunt-bowerful": "~0.2.2",
+    "grunt-bowerful": "git://github.com/gyllstromk/grunt-bowerful.git#develop",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-ember-templates": "~0.4.4",
     "grunt-contrib-concat": "~0.2.0",

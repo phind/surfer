@@ -1,8 +1,14 @@
 <div class="row-fluid">
-    <div class="span8">
+    <div class="span8 mainbody">
         <img src="./img/logo.jpg"><br>
         {{#each post in model}}
-            {{#linkTo post post}}{{post.title}}{{/linkTo}}
+            <div class="post">
+                <div class="posttitle">
+                    {{#linkTo post post}}{{post.title}}{{/linkTo}}
+                </div>
+                <div class="postbody">
+                    {{markdown post.content}}
+                </div>
         {{/each}}
     </div>
     <div class="span2">
