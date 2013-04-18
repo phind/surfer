@@ -1,7 +1,7 @@
 <div class="row-fluid">
     <div class="span8 mainbody">
         <img src="./img/logo.jpg"><br>
-        {{#each post in model}}
+        {{#each post in controller.view}}
             <div class="post">
                 <div class="posttitle">
                     {{#linkTo post post}}{{post.title}}{{/linkTo}}
