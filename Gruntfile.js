@@ -87,6 +87,7 @@ module.exports = function(grunt) {
                     'public/application.js',
                     'client/lib/application.js',
                     'client/lib/helpers/*.js',
+                    'client/lib/mixins/*.js',
                     'client/lib/router.js',
                     'client/lib/models/*.js',
                     'client/lib/views/*.js',
