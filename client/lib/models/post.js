@@ -1,9 +1,4 @@
 (function (App) {
-    App.Store = DS.Store.extend({
-        revision: 12
-    });
-
-
     App.Post = DS.Model.extend({
         placeName: DS.attr('string'),
         title: DS.attr('string'),

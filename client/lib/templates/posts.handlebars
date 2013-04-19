@@ -13,6 +13,8 @@
         {{/each}}
     </div>
     <div class="span2">
-        tags
+        {{#each tag in App.tagsController}}
+            <span class="label">{{tag.title}}</span>
+        {{/each}}
     </div>
 </div>
