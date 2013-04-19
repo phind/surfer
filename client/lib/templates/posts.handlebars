@@ -1,6 +1,5 @@
 <div class="row-fluid">
     <div class="span8 mainbody">
-        {{view App.PaginationView}}
         <img src="./img/logo.jpg"><br>
         {{#each post in controller.view}}
             <div class="post">
@@ -11,6 +10,7 @@
                     {{markdown post.content}}
                 </div>
         {{/each}}
+        {{view App.PaginationView}}
     </div>
     <div class="span2">
         {{#each tag in App.tagsController}}
