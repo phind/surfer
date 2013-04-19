@@ -4,7 +4,7 @@
 
     App.PaginationView = Ember.ContainerView.extend({
         childViews: [ 'pagesView' ],
-        classNames: [ 'pagination'],
+        classNames: [ 'pagination', 'pagination-centered' ],
         
         pagesView: Ember.CollectionView.extend({
             tagName: 'ul',
