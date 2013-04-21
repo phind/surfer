@@ -54,6 +54,7 @@
 
                 click: function (event) {
                     this.get('controller').set('page', this.get('content'));
+                    $('html, body').animate({ scrollTop: 0 }, 'fast');
                 },
 
                 template: Ember.Handlebars.compile('<a>{{view.content}}</a>'),
