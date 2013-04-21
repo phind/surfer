@@ -8,7 +8,7 @@
         
         pagesView: Ember.CollectionView.extend({
             tagName: 'ul',
-            content: function () {
+            content: Ember.computed('controller.pageCount', 'controller.pageNumber', function () {
                 var page = this.get('controller.pageNumber');
                 var pageCount = this.get('controller.pageCount') - 1;
                 var pages = [ prev ];
@@ -30,18 +30,18 @@
                 pages.push(next);
 
                 return pages;
-            }.property('controller.pageCount', 'controller.page'),
+            }),
 
             itemViewClass: Ember.View.extend({
                 classNameBindings: [ 'active', 'disabled' ],
                 
-                active: function () {
-                    return this.get('controller.page') === this.get('content');
-                }.property('controller.page'),
+                active: Ember.computed('controller.pageNumber', function () {
+                    return this.get('controller.pageNumber') === this.get('content');
+                }),
 
-                disabled: function () {
+                disabled: Ember.computed('controller.pageNumber', 'controller.pageCount', function () {
                     var content = this.get('content');
-                    var page = this.get('controller.page');
+                    var page = this.get('controller.pageNumber');
 
                     if (content === prev) {
                         return page === 0;
@@ -50,15 +50,15 @@
                     }
 
                     return false;
-                }.property('controller.page', 'controller.pageCount'),
+                }),
 
                 click: function (event) {
-                    this.get('controller').set('page', this.get('content'));
+                    this.get('controller').set('pageNumber', this.get('content'));
                     $('html, body').animate({ scrollTop: 0 }, 'fast');
                 },
 
-                template: Ember.Handlebars.compile('<a>{{view.content}}</a>'),
-            }),
-        }),
+                template: Ember.Handlebars.compile('<a>{{view.content}}</a>')
+            })
+        })
     });
 })(window.App);
