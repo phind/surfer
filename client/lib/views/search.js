@@ -3,10 +3,10 @@
 App.SearchField = Ember.TextField.extend({
     placeholder: "Search ...",
 
-    keyDown: function (event) {
-        if (event.keyCode === 13) {
-
-        }
+    insertNewline: function () {
+        App.Post.find({
+            query: this.get('value'),
+        });
     },
 });
 
