@@ -1,14 +1,10 @@
 (function (App) {
 
 App.SearchField = Ember.TextField.extend({
-    placeholder: "Search ...",
+    placeholder: 'Search ...',
 
     insertNewline: function () {
-        if (this.get('value') === '') {
-            App.contentController.clear();
-        } else {
-            App.contentController.search(this.get('value'));
-        }
+        this.set('controller.searchQuery', this.get('value'));
     },
 });
 
