@@ -9,7 +9,7 @@
         pagesView: Ember.CollectionView.extend({
             tagName: 'ul',
             content: function () {
-                var page = this.get('controller.page');
+                var page = this.get('controller.pageNumber');
                 var pageCount = this.get('controller.pageCount') - 1;
                 var pages = [ prev ];
                 var pageRange = 3;
