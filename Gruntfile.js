@@ -48,6 +48,7 @@ module.exports = function(grunt) {
                     bootstrap: '~2.2.1',
                     jquery: '',
                     ember: '',
+                    sugar: '',
                     handlebars: {
                         exclude: [ 'handlebars.runtime.js' ],
                     },
@@ -78,6 +79,13 @@ module.exports = function(grunt) {
                   { src: [ '**' ], dest:
                     'public/', cwd: 'client/static/', expand: true, filter: 'isFile' }, // includes files in path
                 ]
+            },
+
+            images: {
+                files: [
+                  { src: [ '**' ], dest: 'public/img/', cwd: 'components/bootstrap/img/',
+                    expand: true, filter: 'isFile' }, // includes files in path
+                ]
             }
         },
 
@@ -85,6 +93,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'public/application.js',
+                    'client/3rd/**/*.js',
                     'client/lib/application.js',
                     'client/lib/router.js',
                     'client/lib/store.js',
