@@ -1,8 +1,22 @@
 <div class="row-fluid">
     <div class="span7 mainbody">
         <img src="./img/logo.jpg"><br>
-        <input type="text" class="search-query" placeholder="Search">
-        {{#each post in controller.view}}
+
+        <div class="search">
+            <div style="float:left; padding-top: 7px; width: 400px;">
+                <div style="float:left;">
+                    <input style="border: none;" class="searchbox" id="query" type="text" placeholder="Search ...">
+                </div>
+                <div class="splitter">
+                    <input style="border: none;" class="searchbox" style="width: 220px;" id="location" type="text" placeholder="Location">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        {{view App.PrevNextView}}
+
+        {{#each post in controller}}
             <div class="post">
                 <div class="posttitle">
                     {{#linkTo post post}}{{post.title}}{{/linkTo}}
