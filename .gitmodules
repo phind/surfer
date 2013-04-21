@@ -1,0 +1,3 @@
+[submodule "client/3rd/pageable-mixin"]
+	path = client/3rd/pageable-mixin
+	url = git@github.com:gyllstromk/ember-pageable-mixin.git
