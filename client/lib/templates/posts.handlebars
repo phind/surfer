@@ -22,7 +22,8 @@
                     {{#linkTo post post}}{{post.title}}{{/linkTo}}
                 </div>
                 <div class="postbody">
-                    {{markdown post.content}}
+                    {{snippet post.content}}
+                    {{#linkTo post post}}[...]{{/linkTo}}
                 </div>
         {{/each}}
         {{view App.PaginationView}}
