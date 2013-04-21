@@ -1,0 +1,8 @@
+{{#unless controller.onFirstPage}}
+    <a href="#" class="pull-left" {{{action decrementPage}}}>&lt; Previous posts</a>
+{{/unless}}
+
+{{#unless controller.onLastPage}}
+    <a href="#" class="pull-right" {{{action incrementPage}}}>Next posts &gt;</a>
+{{/unless}}
+
